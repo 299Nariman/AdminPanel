@@ -1,0 +1,35 @@
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/navbar/Navbar'
+import Header from './components/header/Header'
+import Logo from './components/logos/Logo'
+import Card from './components/cards/Card'
+import Item from './components/items/Item'
+import Sale from './components/sale/Sale'
+import AdminPanel from './components/pages/AdminPanel'
+
+const Home = () => (
+  <>
+  
+      <Header/>
+      <Logo/>
+      <Card/>
+      <Item/>
+      <Sale/>
+  </>
+);
+
+const App = () => {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
